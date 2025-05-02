@@ -1,0 +1,158 @@
+.badge {
+  color: #111928;
+  background-color: #F3F4F6;
+}
+
+.vl {
+  border-left: 1px solid gray;
+  height: 150px;
+  display: inline;
+  margin-left: 10px;
+}
+
+.page-content {
+  min-height: 100vh;
+}
+/**
+@media (min-width: 1400px){
+  .container {
+    max-width: 1320px !important;
+  }
+}
+
+.top-bar {
+background-color: #2d3640;
+color: #f8f9fa;
+}
+.top-bar .topbar-social-menu .social-link {
+color: #f8f9fa;
+}
+.top-bar ul li .text-dark {
+color: #f8F9Fa !important;
+}
+**/
+
+/**
+.top-bar {
+min-height: 40px;
+}
+.top-bar .col-md-5>ul>li {
+position: relative;
+}
+
+.top-bar .col-md-5>ul>li:before {
+background: #dedfe2;
+content: "";
+height: 10px;
+position: absolute;
+right: -10px;
+top: 50%;
+transform: translateY(-50%);
+width: 1px;
+}
+
+.filter-job-input-box {
+padding: 15px;
+}
+**/
+body {
+  font-size: 1rem;
+}
+.section {
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.navbar {
+margin-top: 0px;
+min-height: 65px;
+}
+
+.top-bar {
+position: relative;
+min-height: 40px;
+}
+
+.top-bar ul li {
+position: relative;
+}
+
+.top-bar ul li:before {
+background: #dedfe2;
+content: "";
+height: 10px;
+position: absolute;
+right: -10px;
+top: 50%;
+transform: translateY(-50%);
+width: 1px;
+}
+
+.header-menu .btn-primary {
+font-size: 14px;
+font-weight: 500;
+white-space: nowrap;
+}
+
+.mode-btn {
+height:35px;
+width:35px;
+line-height:35px;
+}
+
+.sector-title {
+  margin-left: 15px;
+  margin-bottom: 1rem;
+}
+.page-title-box {
+padding-top: 100px;
+padding-bottom: 60px;
+}
+.custom-container {
+  width: 95%;
+}
+@media (min-width: 1200px) {
+  .custom-container {
+      max-width: 95%;
+  }
+}
+.navbar .navbar-nav .nav-link {
+font-size: 16px;
+font-weight: 500;
+white-space: nowrap;
+
+}
+.dropdown .dropdown-menu .dropdown-item {
+font-size: 15px;
+font-weight: 400;
+}
+.dropdown-header {
+  font-size: 15px;
+}
+.navbar.sticky {
+min-height: 65px;
+}
+.navbar-collapse ul.extra-menu-items {
+display: none;
+}
+
+@media (max-width: 768px) {
+.navbar-collapse ul.extra-menu-items {
+    display: block;
+}
+}
+@media (max-width: 768px) {
+.navbar-collapse ul.extra-menu-items li {
+    display: block;
+    padding: 8px 15px;
+}
+}
+.navbar-collapse {
+z-index: 1;
+}
+.faq-menu.nav-pills .nav-item .nav-link {
+  font-size: 18px;
+}
+.nav-link {
+  padding: 1rem 1rem;
+}
