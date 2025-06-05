@@ -24,12 +24,42 @@
   <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
   <!--Custom Css-->
   <link href="assets/css/custom.css" id="app-style" rel="stylesheet" type="text/css" />
-
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c7ef0f1010036d29ce0ecb2702322d20"></script>
+  <script type="text/javascript">
+    (function() {
+      function getInitialColorMode() {
+        const isClient = typeof window !== 'undefined';
+        if (isClient) {
+          const persistedColorPreference = window.localStorage.getItem('mode');
+  
+          if (persistedColorPreference) {
+            return persistedColorPreference === "dark" ? true : false;
+          }
+  
+          const systemPreference = window.matchMedia('(prefers-color-scheme: dark)');
+          if (systemPreference.matches) {
+            return 'true';
+          }
+          return 'false';
+        }
+      }
+      const colorMode = getInitialColorMode();
+      document.documentElement.style.setProperty(
+        'background-color',
+        colorMode === 'false' ? '#FFFFFF' : '#2F2F2F'
+      );
+      document.documentElement.style.setProperty(
+        'color',
+        colorMode === 'false' ? '#000000' : '#e5e5e5'
+      );
+    })();
+  </script>
 </head>
 
 <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  
   <!-- JAVASCRIPT -->
   <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unicons.iconscout.com/release/v4.0.0/script/monochrome/bundle.js"></script>
@@ -37,11 +67,8 @@
   <script src="assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
   <!-- Swiper Js -->
   <script src="assets/libs/swiper/swiper-bundle.min.js"></script>
-  <!-- Switcher Js -->
-  <script src="assets/js/pages/switcher.init.js"></script>
   <!-- Template Js -->
   <script src="assets/js/app.js"></script>
-
 </body>
 
 </html>

@@ -1,0 +1,96 @@
+.custom-container {
+    max-width: 80% !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+table {
+    width: 85%;
+    border: 1px solid black;
+}
+.table-sm td {
+    padding: .45rem .45rem;
+}
+.tb-col {
+    width: 10%;
+}
+.table th {
+    font-weight: 700;
+    text-align: center !important;
+    white-space: nowrap;
+}
+
+td{
+    font-size: 15px;
+    vertical-align: middle !important;
+    word-break: keep-all;
+}
+.data:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+table ul {
+    margin-top: .5rem;
+    margin-bottom: 0;
+}
+table ul li {
+    text-align: start;
+    margin-bottom: .5rem;
+}
+
+.laws {
+    width: 80%;
+    min-height: 60%;
+    margin-top: auto;
+    margin-bottom: auto;
+    vertical-align: center;
+}
+
+.summary li {
+    padding: 10px;
+}
+
+.sector {
+    padding-top: 20px;
+}
+
+.reg-list-box h6, span {
+    font-size: 18px;
+}
+
+.reg-list-box span {
+    font-weight: 400;
+}
+
+.entire {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.data {
+    color: #495057;
+}
+
+.data:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.entire td:first-child {
+    white-space: nowrap;
+    text-align: center;
+}
+
+.entire td, .entire th {
+    padding: .5rem .5rem;
+}
+.entire td ul {
+    padding-left: 1.5rem;
+}
+.reg-list-box {
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.faq-menu.custom .nav-item .nav-link {
+    padding: .5rem 0;
+}

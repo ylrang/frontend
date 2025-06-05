@@ -1,28 +1,41 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import Dropdown from "./Dropdown";
 
-const Navbar = () => {
+const Navbar = ({ items }) => {
+    // const handleScroll= () => {
+    //     const navbar =document.getElementById("navbar");
+    //     const offset = window.scrollY;
+    //     if (offset >= 38) {
+    //         navbar.classList.add("fixed-top", "sticky", "nav-sticky")
+    //     } else {
+    //         navbar.classList.remove("fixed-top", "sticky", "nav-sticky")
+    //     }
+    // }
+    // useEffect(() => {
+    //     window.addEventListener("scroll", handleScroll);
+    // }, [])
+    
     return (
         <nav className="navbar navbar-expand-lg" id="navbar">
             <div className="container-fluid custom-container">
                 <Link to={"/"} className="navbar-brand text-dark fw-bold me-auto">
-                    <img src="images/kins-logo.png" height="22" alt="Image" className="logo-light" />
-                    <img src="images/KINS_LOGO.png" height="22" alt="Image" className="logo-dark" />
+                    <img src="assets/images/kins-logo.png" height="22" alt="Home" className="logo-light" />
+                    <img src="assets/images/KINS_LOGO.png" height="22" alt="Home" className="logo-dark" />
                 </Link>
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <ul className="navbar-nav mx-auto navbar-center">
-                        <li className="nav-item">
-                            <Link to={"/about"} className="nav-link" role="button">R&D 지원 프로그램 안내</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to={"/about"} className="nav-link" role="button">R&D 지원 프로그램 안내</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to={"/about"} className="nav-link" role="button">R&D 지원 프로그램 안내</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to={"/about"} className="nav-link" role="button">R&D 지원 프로그램 안내</Link>
-                        </li>
+                        {items.map((item) => 
+                            item.dropdown ? (
+                                <Dropdown item={item} />
+                            ) : (
+                                <li key={item.id} className="nav-item">
+                                    <a className="nav-link" href={item.path}>
+                                        {item.label}
+                                    </a>
+                                </li>
+                            )
+                        )}
                     </ul>
                 </div>
                 <ul className="header-menu list-inline d-flex align-items-center mb-0">
@@ -47,5 +60,6 @@ const Navbar = () => {
         </nav>
     )
 }
+
 
 export default Navbar;

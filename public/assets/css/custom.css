@@ -59,7 +59,7 @@ body {
   font-size: 1rem;
 }
 .section {
-  padding-top: 150px;
+  padding-top: 60px;
   padding-bottom: 150px;
 }
 
@@ -94,11 +94,11 @@ font-weight: 500;
 white-space: nowrap;
 }
 
-.mode-btn {
+/* .mode-btn {
 height:35px;
 width:35px;
 line-height:35px;
-}
+} */
 
 .sector-title {
   margin-left: 15px;
@@ -155,4 +155,22 @@ z-index: 1;
 }
 .nav-link {
   padding: 1rem 1rem;
+}
+
+.sidebar-links::before {
+  font-family: "unicons-line";
+  content: "\eb9f";
+  transition: transform 0.2s ease-in-out;
+}
+
+.sidebar-links[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+.sidebar-collapse ul a{
+  padding: .5rem 1.25rem;
+}
+
+.reginfo-item {
+  min-height: 400px;
 }

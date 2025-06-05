@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <>
             <div className="page-content">
-                <section className="bg-home" id="home" style={{background: "no-repeat cover url('assets/images/kins.jpg')"}}>
+                <section className="bg-home" id="home" style={{backgroundImage: "url('/assets/images/kins.jpg')", backgroundRepeat: "no-repeat", backgroundSize: "cover"}}>
                     <div className="bg-overlay" style={{backgroundColor: "#1e2b38", opacity: "0.5"}}></div>
                         <div className="container">
                             <div className="row justify-content-center">

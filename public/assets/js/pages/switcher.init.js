@@ -50,7 +50,7 @@ function defaultMode(e) {
         var mode = window.localStorage.getItem('mode');
     }
     if (mode == "light") {
-      document.body.removeAttribute("data-layout-mode", "light");
+      document.body.removeAttribute("data-layout-mode");
       localStorage.setItem("theme", "light");
     }else{
       document.body.setAttribute("data-layout-mode", "dark");
