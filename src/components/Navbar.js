@@ -15,19 +15,18 @@ const Navbar = ({ items }) => {
     // useEffect(() => {
     //     window.addEventListener("scroll", handleScroll);
     // }, [])
-    
     return (
         <nav className="navbar navbar-expand-lg" id="navbar">
             <div className="container-fluid custom-container">
                 <Link to={"/"} className="navbar-brand text-dark fw-bold me-auto">
-                    <img src="assets/images/kins-logo.png" height="22" alt="Home" className="logo-light" />
-                    <img src="assets/images/KINS_LOGO.png" height="22" alt="Home" className="logo-dark" />
+                    <img src="/assets/images/kins-logo.png" height="22" alt="Home" className="logo-light" />
+                    <img src="/assets/images/KINS_LOGO.png" height="22" alt="Home" className="logo-dark" />
                 </Link>
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <ul className="navbar-nav mx-auto navbar-center">
                         {items.map((item) => 
                             item.dropdown ? (
-                                <Dropdown item={item} />
+                                <Dropdown key={item.id} item={item} />
                             ) : (
                                 <li key={item.id} className="nav-item">
                                     <a className="nav-link" href={item.path}>

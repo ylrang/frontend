@@ -1,0 +1,37 @@
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 5px 10px;
+  border-bottom: 1px solid #cacad6;
+}
+
+.toolbarItem {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
+}
+
+.toolbarBtn {
+  width: 30px;
+  height: 30px;
+  background-size: 26px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
+}
+
+.toolbarBtn:not(:last-child) {
+  margin-right: 10px;
+}
+
+.toolbarBtn.active {
+  background-color: #e7e7e7;
+}
+.toolbar-line {
+  width: 1px;
+  height: 25px;
+  margin: 0 15px;
+  background-color: #cacad6;
+}

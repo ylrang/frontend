@@ -1,95 +1,70 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PageTitle from "../components/PageTitle";
-
+import { Link } from "react-router-dom";
+import "./FEPList.css";
 const FEPList = () => {
-    return (
-        <>
-            <PageTitle title="내 정보" />
-            <section class="section">
-                <div class="container-xxl">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-5">
-                            <div class="sidebar ms-lg-4 ps-lg-4 mt-5 mt-lg-0">
-                                <div class="mt-4 pt-2">
-                                    <div class="sd-title">
-                                        <h6 class="fs-16 mb-3">Archives</h6>
-                                    </div>
-                                    <ul class="list-unstyled mb-0 mt-3 sidebar-collapse">
-                                        <li class="py-1">
-                                            <a class="me-2 text-muted d-inline-flex align-items-center collapsed sidebar-links" data-bs-toggle="collapse" data-bs-target="#fep1-collapse" aria-expanded="false"> 생태계</a>
-                                            <div class="collapse" id="fep1-collapse">
-                                                <ul class="list-unstyled pb-1 small">
-                                                    <li>
-                                                        <a href="#" class="text-muted d-inline-flex align-items-center">overview</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+    const [data, setData] = useState([
+        { id: 1, index_num: '1', name: '외부인자', 
+            children: [
+                { id: 2, index_num: '1.1', name: '처분장 이슈',
+                    children: [
+                        { id: 3, index_num: '1.1.1', name: '품질보증 및 관리' },
+                        { id: 4, index_num: '1.1.2', name: '부지조사' },
+                        { id: 5, index_num: '1.1.3', name: '설계' },
+                        { id: 6, index_num: '1.1.4', name: '일정 및 계획' },
+                    ] 
+                },
+                { id: 7, index_num: '1.2', name: '지질학적 인자' }
+            ]
+        },
+        { id: 8, index_num: '2', name: '폐기물포장물 인자' }
+    ]);
+    
+    const renderFEP = ({ item, depth=0 }) => {
+        const hasChildren = item.children && item.children.length > 0;
+        return(
+                <div class="accordion-item mt-2 border-0">
+                    <div class="accordion-header" id={`general${item.id}`}>
+                        <Link to={`/fepdocs/${item.id}`}>{item.index_num}. {item.name}</Link>
+                        {hasChildren ? (
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${item.id}`} aria-expanded="false" aria-controls={`collapse${item.id}`}></button>
+                        ) : (
+                            <button class="accordion-button accordion-link" type="button"></button>
+                        )}
+                    </div>
+                    {hasChildren && (
+                    <div id={`collapse${item.id}`} class="accordion-collapse collapse" aria-labelledby={`heading${item.id}`} data-bs-parent={`accordionDepth${depth}`}>
+                        <div class="accordion-body pt-1">
+                            <div class="accordion" id={`accordionDepth${depth + 1}`}>
+                                {item.children.map((child) => renderFEP({item: child, depth: depth + 1}))}
                             </div>
                         </div>
-                        <div class="col-lg-8">
-                            <div>
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-7">
-                                        <div class="text-center mb-2">
-                                        <h3>생태계</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <ul class="list-inline mb-0 mt-3 text-muted text-end">
-                                    <li class="list-inline-item">
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex-shrink-0">
-                                                <i class="uil uil-edit-alt"></i>
-                                            </div>
-                                            <div class="ms-2">
-                                                <p class="mb-0">Alice Mellor</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex-shrink-0">
-                                                <i class="uil uil-calendar-alt"></i>
-                                            </div>
-                                            <div class="ms-2">
-                                                <p class="mb-0"> Aug 02, 2021</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <div class="d-flex align-items-center">
-                                            <div class="flex-shrink-0">
-                                                <i class="uil uil-comments-alt"></i>
-                                            </div>
-                                            <div class="ms-2 flex-grow-1">
-                                                <p class="mb-0"> 2 Comments</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="table-responsive">
-                                    <table class="table mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th>제목</th><td></td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th></th><td></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                    </div>
+                    )}
+                </div>
+        )
+    }
+
+    return (
+        <>
+            <PageTitle title="KINS-KIGAM General FEP List" />
+            <section class="section">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-9">
+                            <div class="mb-4">
+                                <h5>FEP List</h5>
+                            </div>
+                            <div class="accordion accordion-flush faq-box accordion-custom-fep" id="accordionDepth0">
+                                {data.map((item) => renderFEP({ item }))}
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            
         </>
     )
 }
+
 export default FEPList;

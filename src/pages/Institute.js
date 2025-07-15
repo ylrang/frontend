@@ -44,7 +44,7 @@ const Institute = () => {
                                     </div>
                                 </div>
                                 <div className="tab-pane fade" id="locationTab" role="tabpanel" aria-labelledby="location-tab">
-                                    <KakaoMap />
+                                    {/* <KakaoMap /> */}
                                 </div>
                             </div>
                         </div>

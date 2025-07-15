@@ -1,0 +1,136 @@
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html {
+    margin: 0;
+}
+body {
+  margin: 0;
+  font-family: var(--bs-body-font-family);
+  font-size: var(--bs-body-font-size);
+  line-height: var(--bs-body-line-height);
+  color: var(--bs-body-color);
+}
+
+body, div, ul, li, dl, dd, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset, legend, p, select, table, th, td, tr, textarea, button, form, figure, figcaption {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+}
+address {
+    font-style: normal;
+}
+ul, li, ol {
+    list-style: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+table th {
+    font-weight: inherit;
+}
+button {
+    border: 0;
+}
+.ProseMirror-focused {
+    border: none !important;
+    outline: none !important;
+}
+.ProseMirror {
+    min-height: 300px;
+    padding: 5px 0px;
+    padding-bottom: 1.25rem;
+}
+.tiptap .is-editor-empty:first-child::before {
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+    font-size: 0.875rem;
+}
+.tiptap p {
+    padding: 0.375rem 0;
+}
+.tiptap pre {
+    background: #0d0d0d;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-family: inherit;
+    padding: 0.75rem 1rem;
+    line-height: 1.6rem;
+}
+.tiptap pre code {
+    background: none;
+    color: inherit;
+    font-size: 1rem;
+    padding: 0;
+}
+.tiptap ul, .tiptap ol {
+    padding: 0 2rem;
+}
+.tiptap ul p, .tiptap ol p {
+    padding: 0;
+}
+.tiptap ul > li {
+    list-style: disc;
+}
+.tiptap ul > li li {
+    list-style: circle;
+}
+.tiptap ol > li {
+    list-style: decimal;
+}
+.tiptap blockquote {
+    border-left: 3px solid var(--color-border);
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0.625rem;
+}
+.tiptap a {
+    text-decoration: underline;
+    color: #477bff;
+}
+.tiptap iframe {
+    padding: 0.625rem 0;
+}
+.tiptap .tableWrapper {
+    margin: 1.25rem 0;
+}
+.tiptap table {
+    overflow: hidden;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    border: 1px solid var(--color-border);
+    user-select: contain;
+}
+.tiptap table tr:nth-child(2n) {
+    background-color: var(--color-background);
+}
+.tiptap table tr:nth-child(2n + 1) {
+    background-color: var(--color-deep-background);
+}
+.tiptap table tr td {
+    padding: 0.9375rem 0.375rem;
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+.resize-cursor td:has(.column-resize-handle) {
+    border-right: 2px solid #477bff !important;
+    cursor: col-resize;
+}
+
+.editor {
+    padding: 5px 10px;
+    border: 1px solid #e2e5e8;
+    border-radius: .25rem;
+}

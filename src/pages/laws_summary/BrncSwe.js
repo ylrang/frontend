@@ -75,7 +75,7 @@ export const BrncSwe = () => {
           <li>`26년, 심층처분시설 착공 (예정)</li>
           <li>`33년, 심층처분시설 완공 (예정)</li>
         </ul>
-        <div class="text-center">
+        <div class="text-center mt-4">
           <img src="assets/images/brnc/swe_site.png" alt="Image" class="laws" />
         </div>
       </div>

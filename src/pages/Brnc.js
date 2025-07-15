@@ -20,11 +20,11 @@ const Brnc = () => {
             <div class="container-xl">
                 <div class="row">
                     <div class="text-end">
-                        <Link to={"/kinsdb/regulation_database"} class="btn btn-primary fs-14 px-3 py-2 me-1">Database 접속</Link>
+                        <Link to={"/regdocs-list"} class="btn btn-primary fs-14 px-3 py-2 me-1">Database 접속</Link>
                         <Link to={"/kinsdb/upload"} class="btn btn-soft-primary fs-14 px-3 py-2">Data 업로드</Link>
                     </div>
                 </div>
-                <div class="reg-list-box bg-light mt-4">
+                <div class="reg-list-box border border-primary mt-4">
                     <div class="row align-items-center">
                         <div class="col-lg-2">
                             <div class="text-center">
@@ -67,10 +67,10 @@ const Brnc = () => {
                         </div>
                     </div>
                 </div>
-                <div class="mt-4">
+                <div class="mt-5">
                     <div class="tab-content p-0 text-muted">
                         <div class="tab-pane fade show active" id="ALL" role="tabpanel">
-                            <table class="table table-bordered mb-0 entire" style={{ width: "100%" }}>
+                            <table class="table table-bordered mb-0" id="laws-table" style={{ width: "100%" }}>
                                 <thead>
                                     <tr>
                                         <th class="bg-light" style={{ width: "10%" }}>국가</th>
@@ -81,7 +81,7 @@ const Brnc = () => {
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>국내</td>
+                                        <th>국내</th>
                                         <td>
                                             <ul>
                                                 <li><b>원안법 제63조</b><br />방사성페기물관리시설등의 건설, 운영허가</li>
@@ -98,7 +98,7 @@ const Brnc = () => {
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td>미국</td>
+                                        <th>미국</th>
                                         <td>
                                         <ul>
                                             <li><b>Atomic Energy Act of 1954</b><br />원자력법</li>
@@ -107,21 +107,21 @@ const Brnc = () => {
                                         </ul>
                                         </td>
                                         <td>
-                                        <ul>
-                                            <li><a class="data" href="{% url 'regulation-document' %}?document=1"><b>10CFR Part 60</b></a><br />지층처분장에 고준위방폐물 처분</li>
-                                            
-                                            <li><a class="data" href="{% url 'regulation-document' %}?document=3"><b>10CFR Part 63</b></a><br />네바다주 유카마운틴 지층처분장에서의 고준위방폐물 처분</li>
-                                            
-                                            <li><a class="data" href="{% url 'regulation-document' %}?document=9"><b>40CFR Part 191</b></a><br />사용후핵연료, 고준위 및 TRU 방폐물의 관리와 처분을 위한 환경방사선방호기준</li>
-                                            
-                                            <li><a class="data" href="{% url 'regulation-document' %}?document=10"><b>40CFR Part 197</b></a><br />네바다주 유카마운틴을 위한 공중의 보건 및 환경방사선방호의 기준</li>
-                                            
-                                        </ul>
+                                            <ul>
+                                                <li><a class="data" href="{% url 'regulation-document' %}?document=1"><b>10CFR Part 60</b></a><br />지층처분장에 고준위방폐물 처분</li>
+                                                
+                                                <li><a class="data" href="{% url 'regulation-document' %}?document=3"><b>10CFR Part 63</b></a><br />네바다주 유카마운틴 지층처분장에서의 고준위방폐물 처분</li>
+                                                
+                                                <li><a class="data" href="{% url 'regulation-document' %}?document=9"><b>40CFR Part 191</b></a><br />사용후핵연료, 고준위 및 TRU 방폐물의 관리와 처분을 위한 환경방사선방호기준</li>
+                                                
+                                                <li><a class="data" href="{% url 'regulation-document' %}?document=10"><b>40CFR Part 197</b></a><br />네바다주 유카마운틴을 위한 공중의 보건 및 환경방사선방호의 기준</li>
+                                                
+                                            </ul>
                                         </td>
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td>스웨덴</td>
+                                        <th>스웨덴</th>
                                         <td>
                                         <ul>
                                             <li><b>The Act on Nuclear Activities (1984:3)</b><br />원자력활동법</li>
@@ -147,7 +147,7 @@ const Brnc = () => {
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td>핀란드</td>
+                                        <th>핀란드</th>
                                         <td>
                                         <ul>
                                         <li><a class="data" href="#"><b>Nuclear Engergy Act</b></a><br />원자력 에너지 법</li>
@@ -177,7 +177,7 @@ const Brnc = () => {
                                         
                                     </tr>
                                     <tr>
-                                        <td>프랑스</td>
+                                        <th>프랑스</th>
                                         <td>
                                         <ul>
                                         <li><b>TSN Act</b><br />원자력분야 투명성 및 보안에 관한 법</li>
@@ -199,7 +199,7 @@ const Brnc = () => {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>독일</td>
+                                        <th>독일</th>
                                         <td>
                                         <ul>
                                             <li><b>Basic Law (GG)</b><br />기본법</li>
@@ -223,7 +223,7 @@ const Brnc = () => {
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td>캐나다</td>
+                                        <th>캐나다</th>
                                         <td>
                                         <ul>
                                             <li><b>Nuclear Safety and Control Act</b><br />원자력안전 및 통제법</li>
@@ -239,7 +239,7 @@ const Brnc = () => {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>일본</td>
+                                        <th>일본</th>
                                         <td>
                                         <ul>
                                             <li><b>特定放射性廃棄物の最終処分に関する法律</b><br />특정방사성폐기물의 최종 처분에 관한 법률</li>
@@ -249,12 +249,11 @@ const Brnc = () => {
                                             <li><b>特定放射性廃棄物の最終処分に関する法律</b><br />특정방사성폐기물의 최종 처분에 관한 법 시행규칙</li>
                                         </ul>
                                         </td>
-                                        
                                         <td></td>
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td>스위스</td>
+                                        <th>스위스</th>
                                         <td>
                                         <ul>
                                             <li><b>Federal Nuclear Safety Ordinance (NSO)</b></li>

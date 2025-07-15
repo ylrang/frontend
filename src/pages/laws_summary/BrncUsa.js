@@ -72,7 +72,7 @@ export const BrncUsa = () => {
           <li>`12년, 합의에 근거한 새로운 부지선정 절차 마련, 전담기구 설치, 중간저장시설ㆍ처분시설 확보 등 권고</li>
           <li>`22년, 각 원전에서 한시적으로 원전 부지 내 사용후핵연료 임시저장시설 운영중, 중간저장시설은 민간 주도로 추진중 (텍사스ㆍ뉴멕시코)</li>
         </ul>
-        <div class="text-center">
+        <div class="text-center mt-4">
           <img src="assets/images/brnc/usa_site.png" alt="Image" class="laws" />
         </div>
       </div>

@@ -5,8 +5,17 @@ import Footer from "../components/Footer";
 import { Outlet } from "react-router-dom";
 import { rndItems } from "../components/NavItems";
 import Switcher from "../components/Switcher";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { request_refresh } from "../store/AuthAction";
 
 const RndLayout = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(request_refresh());
+    }, [dispatch])
+
     return (
         <>
             <Topbar />

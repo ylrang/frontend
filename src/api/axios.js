@@ -21,13 +21,14 @@ const onError = (status, message) => {
 }
 
 const onRequest = (config) => {
-    const { method, url, headers = {}, data } = config;
+    const { method, url, headers = {}, data, params } = config;
     if (["post", "put", "patch"].includes(method?.toLowerCase() || "")) {
         if (!data) {
             return Promise.reject(new Error("요청 데이터가 없습니다"));
         }
     }
-    console.log(`[API] ${method?.toUpperCase()} ${url} | Request`);
+    const query = new URLSearchParams(params).toString();
+    console.log(`[API] ${method?.toUpperCase()} ${url}?${query} | Request`);
     return Promise.resolve({ ...config, headers });
 }
 

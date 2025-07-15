@@ -1,38 +1,59 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import { useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import useLogout from "../hooks/useLogout";
+import useUser from "../hooks/useUser";
+import { useEffect } from "react";
+import useAuth from "../hooks/useAuth";
+import { axiosPrivateInstance } from "../api/api";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../store/AuthAction";
 
 const Topbar = () => {
-    const [login, setLogin] = useState(true);
+    // const navigate = useNavigate()
+    // const logout = useLogout()
+    // const [loading, setLoading] = useState(false)
+    // const { accessToken } = useAuth()
+    const dispatch = useDispatch();
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+    const logoutHandler = () => {
+        dispatch(logout());
+    };
+    // async function onLogout() {
+    //     setLoading(true)
+    //     await logout()
+    //     navigate('/')
+    // }
+
     return (
         <div className="top-bar">
             <div className="container-fluid custom-container">
                 <div className="row g-0 align-items-center">
                     <ul className="list-inline mb-0 text-center text-md-end">
-                        {login ? (
+                        {isAuthenticated ? (
                         <>
                             <li className="list-inline-item py-2 me-3 align-middle">
-                                <Link to={"/profile"} className="text-dark fw-medium fs-13">
-                                    <i className="uil uil-user"></i> 내 정보
+                                <Link to={'auth/profile'} className="text-dark fw-medium fs-13">
+                                    <i className="uil uil-user"></i> 정보 관리
                                 </Link>
                             </li>
                             <li className="list-inline-item py-2 me-3 align-middle">
-                                <Link to={"/"} className="text-dark fw-medium fs-13">
-                                    <i className="uil uil-user"></i> 로그아웃
-                                </Link>
+                                <a className="text-dark fw-medium fs-13" type="button" onClick={logoutHandler}>
+                                    <i class="uil uil-lock"></i> 로그아웃
+                                </a>
                             </li>
                         </>
                         ) : (
                         <>
                             <li className="list-inline-item py-2 me-3 align-middle">
-                                <Link to={"/"} className="text-dark fw-medium fs-13">
-                                    <i className="uil uil-user"></i> 로그인
+                                <Link to={'auth/login'} className="text-dark fw-medium fs-13">
+                                    <i class="uil uil-lock"></i> 로그인
                                 </Link>
                             </li>
                             <li className="list-inline-item py-2 me-2 align-middle">
-                                <a href="#signupModal" className="text-dark fw-medium fs-13" data-bs-toggle="modal">
-                                    <i className="uil uil-lock"></i> 회원가입
-                                </a>
+                                <Link to={'auth/register'} className="text-dark fw-medium fs-13">
+                                    <i className="uil uil-user"></i> 회원가입
+                                </Link>
                             </li>
                         </>
                         )}

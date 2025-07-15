@@ -3,21 +3,15 @@
     margin-left: auto;
     margin-right: auto;
 }
-table {
-    width: 85%;
-    border: 1px solid black;
-}
+
 .table-sm td {
     padding: .45rem .45rem;
 }
 .tb-col {
     width: 10%;
 }
-.table th {
-    font-weight: 700;
-    text-align: center !important;
-    white-space: nowrap;
-}
+
+
 
 td{
     font-size: 15px;
@@ -28,11 +22,11 @@ td{
     text-decoration: underline;
     cursor: pointer;
 }
-table ul {
+#laws-table ul {
     margin-top: .5rem;
     margin-bottom: 0;
 }
-table ul li {
+#laws-table ul li {
     text-align: start;
     margin-bottom: .5rem;
 }
@@ -61,7 +55,7 @@ table ul li {
     font-weight: 400;
 }
 
-.entire {
+#laws-table {
     width: 100%;
     table-layout: fixed;
 }
@@ -75,17 +69,26 @@ table ul li {
     cursor: pointer;
 }
 
-.entire td:first-child {
+#laws-table > tbody th {
+    font-weight: 400;
     white-space: nowrap;
     text-align: center;
+    vertical-align: middle
 }
 
-.entire td, .entire th {
+#laws-table th {
+    text-align: center !important;
+    white-space: nowrap;
+}
+
+#laws-table td, #laws-table th {
     padding: .5rem .5rem;
 }
-.entire td ul {
+
+#laws-table td ul {
     padding-left: 1.5rem;
 }
+
 .reg-list-box {
     border-radius: 10px;
     padding: 18px;

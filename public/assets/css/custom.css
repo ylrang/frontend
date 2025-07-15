@@ -157,20 +157,30 @@ z-index: 1;
   padding: 1rem 1rem;
 }
 
-.sidebar-links::before {
-  font-family: "unicons-line";
-  content: "\eb9f";
-  transition: transform 0.2s ease-in-out;
-}
-
-.sidebar-links[aria-expanded="true"]::before {
-  transform: rotate(90deg);
-}
-
-.sidebar-collapse ul a{
-  padding: .5rem 1.25rem;
-}
-
 .reginfo-item {
   min-height: 400px;
+}
+
+.toolbarBtn.editor-h1 {
+  background-image: url("/assets/images/editor/editor_h1.svg");
+}
+
+.toolbarBtn.editor-h2 {
+  background-image: url("/assets/images/editor/editor_h2.svg");
+}
+
+.toolbarBtn.editor-h3 {
+  background-image: url("/assets/images/editor/editor_h3.svg");
+}
+
+.toolbarBtn.editor-bold {
+  background-image: url("/assets/images/editor/editor_bold.svg");
+}
+
+.toolbarBtn.editor-italic {
+  background-image: url("/assets/images/editor/editor_italic.svg");
+}
+
+.toolbarBtn.editor-strike {
+  background-image: url("/assets/images/editor/editor_strike.svg");
 }

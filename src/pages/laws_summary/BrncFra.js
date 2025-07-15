@@ -70,7 +70,7 @@ export const BrncFra = () => {
           <li>`10년 뫼즈·오트마른 경계를 부지로 결정</li>
           <li>`22년, 현재 건설허가 신청 준비중</li>
         </ul>
-        <div class="text-center">
+        <div class="text-center mt-4">
           <img src="assets/images/brnc/fra_site.png" alt="Image" class="laws" />
         </div>
       </div>

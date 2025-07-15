@@ -85,7 +85,7 @@ export const BrncFin = () => {
           <li>`16년, 심층처분시설(ONKALO) 착공</li>
           <li>`23년, 심층처분시설(ONKALO) 완공 (예정)</li>
         </ul>
-        <div class="text-center">
+        <div class="text-center mt-4">
           <img src="assets/images/brnc/fin_site.png" alt="Image" class="laws" />
         </div>
       </div>

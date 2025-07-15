@@ -1,0 +1,57 @@
+.accordion-custom-fep .accordion-button[type=button] {
+    cursor: default;
+}
+
+.accordion-custom-fep .accordion-button {
+    background-color: transparent;
+}
+
+.accordion-custom-fep .accordion-button.accordion-link::after {
+    background-image: initial;
+}
+/*
+.accordion-button.accordion-link:not(.collapsed)::after {
+    background-image: initial;
+}
+
+.accordion-button:not(.accordion-link):after {
+    cursor: pointer;
+}
+*/
+.accordion-custom-fep .accordion-button:not(.collapsed) {
+    background-color: transparent;
+}
+
+.accordion-custom-fep .accordion-header {
+    display: flex;
+    align-items: center;
+    background-color: var(--bs-accordion-active-bg);
+    border-radius: 5px !important;
+}
+
+.accordion-custom-fep .accordion-header a {
+    white-space: nowrap;
+    padding-left: 1rem;
+    color: rgba(var(--bs-primary-rgb));
+}
+
+.accordion-custom-fep .accordion-header a:hover {
+    text-decoration: underline;
+}
+
+.accordion-custom-fep .accordion[id="accordionDepth1"] .accordion-item .accordion-header {
+    background-color: rgba(var(--bs-light-rgb));
+    
+}
+
+.accordion-custom-fep .accordion[id="accordionDepth1"] .accordion-item .accordion-header a {
+    color: var(--bs-dark);
+}
+
+.accordion-custom-fep .accordion[id="accordionDepth2"] .accordion-item .accordion-header {
+    background-color: var(--bs-body-bg);
+}
+
+.accordion-custom-fep .accordion[id="accordionDepth2"] .accordion-item .accordion-header a {
+    color: var(--bs-secondary-color);
+}

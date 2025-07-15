@@ -19,29 +19,29 @@ const Pagination = ({ pageCount, pageRange, currentPage, setCurrentPage }) => {
         <nav aria-label="Page navigation example">
             <ul className="pagination job-pagination mb-0 justify-content-center">
                 <li className={`page-item${noPrev ? " invisible" : ""}`}>
-                    <a href="#" onClick={() => setCurrentPage(start - 1)} className="page-link" tabIndex="-1">
+                    <button onClick={() => setCurrentPage(start - 1)} className="page-link" tabIndex="-1">
                         <i className="mdi mdi-chevron-double-left fs-15"></i>
-                    </a>
+                    </button>
                 </li>
                 <li className={`page-item${currentPage === 1 ? " invisible" : ""}`}>
-                    <a href="#" onClick={() => setCurrentPage(currentPage - 1)} className="page-link" tabIndex="-1">
+                    <button onClick={() => setCurrentPage(currentPage - 1)} className="page-link" tabIndex="-1">
                         <i className="mdi mdi-chevron-left fs-15"></i>
-                    </a>
+                    </button>
                 </li>
                 {[...Array(Math.min(pageRange, pageCount - start + 1))].map((_, i) => (
                     <li key={i} className={`page-item${currentPage === start + i ? " active": ""}`}>
-                        {start + i <= pageCount &&(<a href="#" onClick={() => setCurrentPage(start + i)} className="page-link">{start + i}</a>)}
+                        {start + i <= pageCount &&(<button onClick={() => setCurrentPage(start + i)} className="page-link">{start + i}</button>)}
                     </li>
                 ))}
                 <li className={`page-item${currentPage === pageCount ? " invisible" : ""}`}>
-                    <a href="#" onClick={() => setCurrentPage(currentPage + 1)} className="page-link" tabIndex="-1">
+                    <button onClick={() => setCurrentPage(currentPage + 1)} className="page-link" tabIndex="-1">
                         <i className="mdi mdi-chevron-right fs-15"></i>
-                    </a>
+                    </button>
                 </li>
                 <li className={`page-item${noNext ? " invisible" : ""}`}>
-                    <a href="#" onClick={() => setCurrentPage(start + pageRange)} className="page-link" tabIndex="-1">
+                    <button onClick={() => setCurrentPage(start + pageRange)} className="page-link" tabIndex="-1">
                         <i className="mdi mdi-chevron-double-right fs-15"></i>
-                    </a>
+                    </button>
                 </li>
             </ul>
         </nav>

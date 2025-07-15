@@ -37,10 +37,28 @@ export const rndItems = [
         dropdown: [
             {
                 id: 1,
+                title: "GeodartReport",
+                label: "GeoDart 보고서",
+                path: "/",
+            },
+            {
+                id: 1,
                 title: "fepList",
                 label: "FEP 목록",
-                path: "/fep-list",
+                path: "/fepdb",
             },
+            {
+                id: 1,
+                title: "logtermSystem",
+                label: "장기 시스템 분석",
+                path: "/",
+            },
+            {
+                id: 1,
+                title: "tspaModel",
+                label: "TSPA 모델",
+                path: "/",
+            },            
         ]
     },
     {

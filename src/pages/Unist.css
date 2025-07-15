@@ -1,0 +1,29 @@
+#report-table th {
+    font-weight: 500 !important;
+    font-size: 16px;
+}
+#report-table td, #report-table th {
+    vertical-align: middle;
+    word-break: keep-all;
+    text-align: center;
+}
+#report-table td {
+    font-size: 16px;
+    max-width: 400px;
+    padding: .5rem .5rem !important;
+}
+ol {
+    margin-top: 1rem;
+}
+ol li {
+    text-align: start !important;
+    margin-bottom: 1rem;
+}
+.data:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#report-table td:nth-child(1) {
+    width: 10px;
+}

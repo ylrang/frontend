@@ -9,14 +9,10 @@ import Switcher from "../components/Switcher";
 const MainLayout = () => {
     return (
         <>
-            <Topbar />
-            <Navbar items={rndItems} />
+            <div className="alert-container"></div>
             <div className="main-content">
                 <Outlet />
             </div>
-            <Footer />
-            <Switcher />
-            
         </>
     );
 }

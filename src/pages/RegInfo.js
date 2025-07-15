@@ -14,7 +14,7 @@ const RegInfo = () => {
     const [error, setError] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [pageCount, setpageCount] = useState(1);
-    const getRegsData = async (page) => {
+    const fetchRegs = async (page) => {
         setLoading(true);
         try {
             const res = await getRegs({ page });
@@ -33,7 +33,7 @@ const RegInfo = () => {
         setKeyword(e.target.value)
     }
     useEffect(() => {
-        getRegsData(currentPage);
+        fetchRegs(currentPage);
         
         document.documentElement.style.scrollBehavior = 'auto';
         window.scrollTo({ top: 0 });

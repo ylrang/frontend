@@ -38,9 +38,7 @@ const KinsDB = () => {
                             <div class="card">
                                 <div class="card-body px-4 py-5">
                                     <div class="mt-4 text-center">
-                                        <a href="#" class="primary-link">
-                                            <h6 class="fs-20 mb-2">규제기준</h6>
-                                        </a>
+                                        <h6 class="fs-20 mb-2">규제기준</h6>
                                         <p class="text-muted mb-4">법령 체계 및 규제 관련 법안</p>
                             
                                         <a href="{% url 'brnc' %}" class="form-text text-primary">Database 접속 <i class="uil uil-angle-right-b"></i></a>
@@ -52,9 +50,7 @@ const KinsDB = () => {
                             <div class="card">
                                 <div class="card-body px-4 py-5">
                                     <div class="mt-4 text-center">
-                                        <a href="#" class="primary-link">
-                                            <h6 class="fs-20 mb-2">규제사례</h6>
-                                        </a>
+                                        <h6 class="fs-20 mb-2">규제사례</h6>
                                         <p class="text-muted mb-4">안전규제 사례 검토별 이슈</p>
                                         <a href="{% url 'unist' %}" class="form-text text-primary">Database 접속 <i class="uil uil-angle-right-b"></i></a>
                                     </div>
