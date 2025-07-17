@@ -15,7 +15,8 @@ const Topbar = () => {
     // const [loading, setLoading] = useState(false)
     // const { accessToken } = useAuth()
     const dispatch = useDispatch();
-    const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+    const { isLoggedIn, user } = useSelector(state => state.auth)
+    
     const logoutHandler = () => {
         dispatch(logout());
     };
@@ -30,8 +31,9 @@ const Topbar = () => {
             <div className="container-fluid custom-container">
                 <div className="row g-0 align-items-center">
                     <ul className="list-inline mb-0 text-center text-md-end">
-                        {isAuthenticated ? (
+                        {isLoggedIn ? (
                         <>
+                            <li className="list-inline-item py-2 me-3 align-middle"><div className="text-dark fw-medium fs-13">{user?.username}님</div></li>
                             <li className="list-inline-item py-2 me-3 align-middle">
                                 <Link to={'auth/profile'} className="text-dark fw-medium fs-13">
                                     <i className="uil uil-user"></i> 정보 관리

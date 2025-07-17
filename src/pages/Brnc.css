@@ -47,11 +47,12 @@ td{
     padding-top: 20px;
 }
 
-.reg-list-box h6, span {
+.reg-list-box h6{
     font-size: 18px;
 }
 
 .reg-list-box span {
+    font-size: 18px;
     font-weight: 400;
 }
 

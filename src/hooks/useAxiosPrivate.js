@@ -4,9 +4,12 @@ import { useEffect } from "react";
 import useRefreshToken from "./useRefreshToken";
 import useAuth from "./useAuth";
 import { useSelector } from "react-redux";
+import { store } from "../store/store";
 
 export default function useAxiosPrivate() {
-    const accessToken = useSelector(state => state.auth.accessToken);
+    const state = store.getState()
+    const accessToken = state.auth.access
+    const csrfToken = state.auth.csrf
     // const { accessToken, setAccessToken, csrftoken, user } = useAuth()
     // const refresh = useRefreshToken()
     useEffect(() => {
@@ -15,6 +18,7 @@ export default function useAxiosPrivate() {
                 if (accessToken) {
                     console.log("access token: ", accessToken)
                     config.headers['Authorization'] = `Bearer ${accessToken}`;
+                    config.headers['X-CSRFToken'] = csrfToken
                 }
                 return config
             },

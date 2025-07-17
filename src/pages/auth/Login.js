@@ -14,8 +14,9 @@ const Login = () => {
     const [loading, setLoading] = useState(false)
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
+    
     const dispatch = useDispatch();
-    const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+    const { isLoggedIn } = useSelector(state => state.auth);
     
     function onEmailChange(e) {
         setEmail(e.target.value)
@@ -49,7 +50,7 @@ const Login = () => {
         }
     };
 
-    if (typeof window !== 'undefined' && isAuthenticated) {
+    if (typeof window !== 'undefined' && isLoggedIn) {
         navigate(fromLocation, { replace: true })
     }
 

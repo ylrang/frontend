@@ -21,10 +21,12 @@ const privateInstance = axios.create({
 privateInstance.interceptors.request.use(
     (config) => {
         const state = store.getState();
+        const csrfToken = state.auth.csrfToken;
         const accessToken = state.auth.accessToken;
-        if (accessToken) {
+        if (accessToken && csrfToken) {
             console.log("access token: ", accessToken)
             config.headers['Authorization'] = `Bearer ${accessToken}`;
+            config.headers['X-CSRFToken'] = csrfToken
         }
         return config
     },

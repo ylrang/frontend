@@ -12,6 +12,22 @@ form.auth-form .auth-input-icon {
     top: 3px;
     z-index: 10
 }
+form.auth-form .auth-input-icon {
+    color: #e2e5e8;
+    padding: 7px 10px;
+}
+
+.auth-box-plain form.auth-form .auth-input-icon {
+    color: #495057;
+}
+
+.auth-form-fields {
+    min-height: 450px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 form.auth-form .form-control {
     background-color: #fff
@@ -35,6 +51,11 @@ form.auth-form .pb-0 {
 
 form.auth-form .ps-5 {
     padding-left: 3rem!important
+}
+
+form.auth-form .form-label {
+    font-size: 14px;
+    font-weight: 500;
 }
 
 form.auth-form .form-check {
@@ -323,4 +344,17 @@ body[dir=rtl] svg.icon.svg-icon-ti-ti-arrow-narrow-right {
         background-color: #fff;
         border-width: 3px
     }
+}
+.input-password-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    padding: 10px 15px;
+    z-index: 9;
+}
+
+.required:after {
+    color: #fc655e;
+    content: " *";
 }

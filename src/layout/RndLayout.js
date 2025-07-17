@@ -11,10 +11,13 @@ import { request_refresh } from "../store/AuthAction";
 
 const RndLayout = () => {
     const dispatch = useDispatch();
-
+    const { isLoggedIn } = useSelector(state => state.auth)
+    
     useEffect(() => {
-        dispatch(request_refresh());
-    }, [dispatch])
+        if (isLoggedIn === null) {
+            dispatch(request_refresh());
+        }
+    }, [dispatch, isLoggedIn])
 
     return (
         <>

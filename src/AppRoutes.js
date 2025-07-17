@@ -25,6 +25,7 @@ import FEPLogDetail from "./pages/FEPLogDetail";
 import AuthMiddleware from "./middleware/Auth";
 import PersistLogin from "./components/PersistLogin";
 import Login from "./pages//auth/Login";
+import RegisterSuccess from "./pages/auth/RegisterSuccess";
 
 const AppRoutes = () => {
     return (
@@ -33,6 +34,7 @@ const AppRoutes = () => {
                 <Route path='auth'>
                     <Route path='login' element={<Login />}></Route>
                     <Route path='register' element={<Register />}></Route>
+                    <Route path='register-success' element={<RegisterSuccess />}></Route>
                     {/* <Route path='profile' element={<AuthMiddleware />}>
                         <Route index element={<Profile />}></Route>
                     </Route> */}
