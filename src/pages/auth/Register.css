@@ -358,3 +358,9 @@ body[dir=rtl] svg.icon.svg-icon-ti-ti-arrow-narrow-right {
     color: #fc655e;
     content: " *";
 }
+
+.invalid-feedback {
+    position: absolute;
+    margin-top: 0;
+    font-size: 13px;
+}

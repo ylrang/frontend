@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 
-const StepTwoForm = ({ email, password, password2, username, company, dept, onChange }) => {
+const StepTwoForm = ({ email, password, password2, username, company, dept, onChange, emailError, passwordError, password2Error, usernameError, companyError }) => {
     return (
             <div class= "row">
                 <div class="col-lg-12">
@@ -16,7 +16,10 @@ const StepTwoForm = ({ email, password, password2, username, company, dept, onCh
                             <span class="auth-input-icon input-group-text">
                                 <svg class="icon svg-icon-ti-ti-mail" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path><path d="M3 7l9 6l9 -6"></path></svg>
                             </span>
-                            <input class="form-control ps-5" data-counter="60" placeholder="Email address" required="required" name="email" type="email" id="email" aria-required="true" onChange={onChange} value={email}/>
+                            <input class={`form-control ps-5 ${emailError ? ' is-invalid' : ''}`} data-counter="60" placeholder="Email address" required="required" name="email" type="email" id="email" aria-required="true" onChange={onChange} value={email}/>
+                            {emailError &&(<div id="emailFeedback" class="invalid-feedback">
+                                {emailError}
+                            </div>)}
                         </div>
                     </div>
                 </div>

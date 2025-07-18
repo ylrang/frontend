@@ -79,6 +79,7 @@ export const request_refresh = () => async dispatch => {
 };
 
 export const register = (email, password, password2, username, company, dept) => async dispatch => {
+    dispatch({type: SET_AUTH_LOADING});
     const data = JSON.stringify({email, password, password2, username, company, dept})
     try {
         const res = await axiosInstance.post('register', data)
@@ -92,10 +93,12 @@ export const register = (email, password, password2, username, company, dept) =>
     }
     catch (error) {
         dispatch({type: REGISTER_FAIL})
-    } 
+    }
+    dispatch({type: REMOVE_AUTH_LOADING});
 }
 
 export const login = (email, password) => async dispatch => {
+    dispatch({type: SET_AUTH_LOADING});
     try {
         const res = await axiosInstance.post('login', JSON.stringify({email, password}))
         console.log(res);
@@ -112,7 +115,8 @@ export const login = (email, password) => async dispatch => {
     }
     catch (error) {
         dispatch({type: LOGIN_FAIL})
-    } 
+    }
+    dispatch({type: REMOVE_AUTH_LOADING});
 }
 
 export const logout = () => async dispatch => {

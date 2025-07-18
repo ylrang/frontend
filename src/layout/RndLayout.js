@@ -6,18 +6,20 @@ import { Outlet } from "react-router-dom";
 import { rndItems } from "../components/NavItems";
 import Switcher from "../components/Switcher";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { request_refresh } from "../store/AuthAction";
 
 const RndLayout = () => {
     const dispatch = useDispatch();
     const { isLoggedIn } = useSelector(state => state.auth)
     
-    useEffect(() => {
+
+    useLayoutEffect(() => {
         if (isLoggedIn === null) {
             dispatch(request_refresh());
         }
     }, [dispatch, isLoggedIn])
+    
 
     return (
         <>

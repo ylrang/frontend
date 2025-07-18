@@ -2,7 +2,7 @@ import { REGISTER_SUCCESS, REGISTER_FAIL, RESET_REGISTER_SUCCESS, LOGIN_SUCCESS,
 
 const initialState = {
     user: null,
-    isLoggedIn: null,
+    isLoggedIn: false,
     loading: false,
     accessToken: null,
     csrfToken: null,
@@ -31,6 +31,10 @@ const authReducer = (state = initialState, action) => {
             return {...state, isLoggedIn: false, accessToken: action.payload.accessToken, csrfToken: action.payload.csrfToken}
         case REFRESH_FAIL:
             return {...state, isLoggedIn: false, user: null}
+        case SET_AUTH_LOADING:
+            return {...state, loading: true}
+        case REMOVE_AUTH_LOADING:
+            return {...state, loading: false}
         default:
             return state;
     };
