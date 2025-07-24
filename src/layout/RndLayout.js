@@ -4,25 +4,38 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Outlet } from "react-router-dom";
 import { rndItems } from "../components/NavItems";
-import Switcher from "../components/Switcher";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLayoutEffect } from "react";
-import { request_refresh } from "../store/AuthAction";
+import { SET_AUTH_LOADING, REMOVE_AUTH_LOADING } from "../actions/types";
+import { request_refresh, logout } from "../actions/authAction";
 
 const RndLayout = () => {
     const dispatch = useDispatch();
-    const { isLoggedIn } = useSelector(state => state.auth)
-    
+    const { accessToken, loading } = useSelector(state => state.auth)
 
-    useLayoutEffect(() => {
-        if (isLoggedIn === null) {
-            dispatch(request_refresh());
+    useEffect(() => {
+        let isMounted = true
+        async function verifyUser() {
+            dispatch({type: SET_AUTH_LOADING});
+            try {
+                dispatch(request_refresh());
+            } catch (err) {
+                dispatch(logout());
+            } finally {
+                isMounted && dispatch({type: REMOVE_AUTH_LOADING})
+            }
         }
-    }, [dispatch, isLoggedIn])
-    
+
+        !accessToken ? verifyUser() : dispatch({type: REMOVE_AUTH_LOADING});
+
+        return () => {
+            isMounted = false
+        }
+    }, [dispatch])
 
     return (
-        <>
+        loading ? "Loading" : 
+            <>
             <Topbar />
             <Navbar items={rndItems} />
             <div className="main-content">
@@ -32,7 +45,7 @@ const RndLayout = () => {
             <button id="back-to-top" style={{display: "none"}}>
                 <i className="mdi mdi-arrow-up"></i>
             </button>
-        </>
+            </>
     );
 }
 

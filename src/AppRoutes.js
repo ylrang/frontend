@@ -19,22 +19,17 @@ import FEPUpdate from "./pages/FEPUpdate";
 import Unist from "./pages/Unist";
 import Report from "./pages/Report";
 import FEPDB from "./pages/FEPDB";
-import Register from "./pages//auth/Register";
 import FEPLog from "./pages/FEPLog";
 import FEPLogDetail from "./pages/FEPLogDetail";
 import AuthMiddleware from "./middleware/Auth";
-import PersistLogin from "./components/PersistLogin";
+// import AppContent from "./components/AppContent";
 import Login from "./pages//auth/Login";
-import RegisterSuccess from "./pages/auth/RegisterSuccess";
 
 const AppRoutes = () => {
     return (
         <Routes>
-            {/* <Route element={<PersistLogin />}> */}
                 <Route path='auth'>
                     <Route path='login' element={<Login />}></Route>
-                    <Route path='register' element={<Register />}></Route>
-                    <Route path='register-success' element={<RegisterSuccess />}></Route>
                     {/* <Route path='profile' element={<AuthMiddleware />}>
                         <Route index element={<Profile />}></Route>
                     </Route> */}
@@ -61,7 +56,6 @@ const AppRoutes = () => {
                     <Route path="regulation/:id" element={<RegInfoDetail />}></Route>
                     <Route path="institute" element={<Institute />}></Route>
                 </Route>
-            {/* </Route> */}
         </Routes>
     )
 }

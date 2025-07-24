@@ -29,9 +29,9 @@ const Navbar = ({ items }) => {
                                 <Dropdown key={item.id} item={item} />
                             ) : (
                                 <li key={item.id} className="nav-item">
-                                    <a className="nav-link" href={item.path}>
+                                    <Link to={item.path} className="nav-link">
                                         {item.label}
-                                    </a>
+                                    </Link>
                                 </li>
                             )
                         )}

@@ -1,27 +1,26 @@
 import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import useLogout from "../hooks/useLogout";
-import useUser from "../hooks/useUser";
-import { useEffect } from "react";
-import useAuth from "../hooks/useAuth";
-import { axiosPrivateInstance } from "../api/api";
+// import useLogout from "../hooks/useLogout";
+// import useUser from "../hooks/useUser";
+// import { useEffect } from "react";
+// import useAuth from "../hooks/useAuth";
+// import { axiosPrivateInstance } from "../api/api";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../store/AuthAction";
+import { logout } from "../actions/authAction";
 
 const Topbar = () => {
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     // const logout = useLogout()
-    // const [loading, setLoading] = useState(false)
-    // const { accessToken } = useAuth()
+    // const { accessToken, user } = useAuth()
     const dispatch = useDispatch();
     const { isLoggedIn, user } = useSelector(state => state.auth)
     
     const logoutHandler = () => {
         dispatch(logout());
+        navigate('/')
     };
     // async function onLogout() {
-    //     setLoading(true)
     //     await logout()
     //     navigate('/')
     // }
@@ -45,7 +44,7 @@ const Topbar = () => {
                                 </a>
                             </li>
                         </>
-                        ) : (
+                        ):(
                         <>
                             <li className="list-inline-item py-2 me-3 align-middle">
                                 <Link to={'auth/login'} className="text-dark fw-medium fs-13">

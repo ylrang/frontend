@@ -1,4 +1,4 @@
-import { REGISTER_SUCCESS, REGISTER_FAIL, RESET_REGISTER_SUCCESS, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT_SUCCESS, LOGOUT_FAIL, LOAD_USER_SUCCESS, LOAD_USER_FAIL, LoggedIn_SUCCESS, LoggedIn_FAIL,REFRESH_SUCCESS, REFRESH_FAIL, SET_AUTH_LOADING, REMOVE_AUTH_LOADING } from './AuthAction';
+import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT_SUCCESS, LOGOUT_FAIL, LOAD_USER_SUCCESS, LOAD_USER_FAIL, LoggedIn_SUCCESS, LoggedIn_FAIL,REFRESH_SUCCESS, REFRESH_FAIL, SET_AUTH_LOADING, REMOVE_AUTH_LOADING } from '../actions/types';
 
 const initialState = {
     user: null,
@@ -11,10 +11,6 @@ const initialState = {
 const authReducer = (state = initialState, action) => {
     console.log(action);
     switch(action.type) {
-        case REGISTER_SUCCESS:
-            return {...state}
-        case REGISTER_FAIL:
-            return {...state}
         case LOGIN_SUCCESS:
             return {...state, isLoggedIn: true, accessToken: action.payload.accessToken, csrfToken: action.payload.csrfToken}
         case LOGIN_FAIL:

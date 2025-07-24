@@ -4,7 +4,7 @@ export const AuthContext = createContext({
     user: {},
     setUser: () => { },
     accessToken: null,
-    csrftoken: null,
+    csrfToken: null,
     setAccessToken: () => { },
     setCSRFToken: () => { }
 });
@@ -12,13 +12,13 @@ export const AuthContext = createContext({
 export function AuthContextProvider({ children }) {
     const [user, setUser] = useState({})
     const [accessToken, setAccessToken] = useState()
-    const [csrftoken, setCSRFToken] = useState()
+    const [csrfToken, setCSRFToken] = useState()
 
     return (
         <AuthContext.Provider value={{
             user, setUser,
             accessToken, setAccessToken,
-            csrftoken, setCSRFToken,
+            csrfToken, setCSRFToken,
             }}>
             {children}
         </AuthContext.Provider>

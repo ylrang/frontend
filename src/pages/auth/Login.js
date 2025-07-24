@@ -1,23 +1,24 @@
 import React, { useState } from "react"
 import { useNavigate, useLocation } from "react-router-dom"
-import { axiosInstance } from "../../api/api"
-import useAuth from "../../hooks/useAuth"
+// import { axiosInstance } from "../../api/authApi"
+// import useAuth from "../../hooks/useAuth"
 import { Link } from "react-router-dom"
-import { login } from "../../store/AuthAction"
+// import useAxiosPrivate from "../../hooks/useAxiosPrivate"
 import { useSelector, useDispatch } from 'react-redux';
+import { login } from "../../actions/authAction"
 
 const Login = () => {
-    // const { setAccessToken, setCSRFToken } = useAuth()
+    // const { setAccessToken, setCSRFToken, setUser } = useAuth()
+    // const axiosPrivate = useAxiosPrivate()
     const navigate = useNavigate()
     const location = useLocation()
     const fromLocation = location?.state?.from?.pathname || '/'
-    const [loading, setLoading] = useState(false)
+    // const [loading, setLoading] = useState(false)
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
-    
     const dispatch = useDispatch();
-    const { isLoggedIn } = useSelector(state => state.auth);
-    
+    const { isLoggedIn, loading } = useSelector(state => state.auth)
+
     function onEmailChange(e) {
         setEmail(e.target.value)
     }
@@ -44,10 +45,7 @@ const Login = () => {
     // }
     async function onSubmitForm(e) {
         e.preventDefault();
-
-        if (dispatch && dispatch !== null && dispatch !== undefined) {
-            dispatch(login(email, password));
-        }
+        dispatch(login(email, password));
     };
 
     if (typeof window !== 'undefined' && isLoggedIn) {
