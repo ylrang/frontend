@@ -2,9 +2,9 @@ import axios from "axios";
 
 // 나중에 requests.js로 분리
 const API_BASE_URLS = {
-    'RND': 'http://rnd.localhost/api',
-    'KINSDB': 'http://kinsdb.localhost/api',
-    'CLOUD': 'http://cloud.localhost/api',
+    'RND': 'http://rnd.127.0.0.1.nip.io/api',
+    'KINSDB': 'http://kinsdb.127.0.0.1.nip.io/api',
+    'CLOUD': 'http://cloud.127.0.0.1.nip.io/api',
 }
 const axiosApi = (url) => {
     const instance = axios.create({

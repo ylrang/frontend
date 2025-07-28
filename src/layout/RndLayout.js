@@ -20,7 +20,7 @@ const RndLayout = () => {
             try {
                 dispatch(request_refresh());
             } catch (err) {
-                dispatch(logout());
+                console.log(err?.response)
             } finally {
                 isMounted && dispatch({type: REMOVE_AUTH_LOADING})
             }

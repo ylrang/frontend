@@ -2,7 +2,7 @@ import axios from "axios";
 import { store } from "../store/store";
 import { request_refresh, logout } from "../actions/authAction";
 
-const API_URL = "http://auth.localhost/api"
+const API_URL = "http://auth.127.0.0.1.nip.io/api"
 
 export const axiosInstance = axios.create({
     baseURL: API_URL,

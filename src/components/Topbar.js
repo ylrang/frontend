@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 // import useLogout from "../hooks/useLogout";
@@ -15,7 +15,7 @@ const Topbar = () => {
     // const { accessToken, user } = useAuth()
     const dispatch = useDispatch();
     const { isLoggedIn, user } = useSelector(state => state.auth)
-    
+
     const logoutHandler = () => {
         dispatch(logout());
         navigate('/')
