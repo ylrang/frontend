@@ -43,14 +43,14 @@ const AppRoutes = () => {
                     <Route path="unist" element={<Unist />}></Route>
                     <Route path="report/:id" element={<Report />}></Route>
                     
-                    {/* <Route path="fepdb" element={<AuthMiddleware/>}>
-                        <Route index element={<FEPDB />}></Route>
-                        <Route path="docs" element={<FEPList />}></Route>
-                        <Route path="docs/:id" element={<FEPDocs />}></Route>
-                        <Route path="docs-update/:id" element={<FEPUpdate />}></Route>
-                        <Route path="docs/:fepId/log" element={<FEPLog />}></Route>
-                        <Route path="docs/:fepId/log/:id" element={<FEPLogDetail />}></Route>
-                    </Route> */}
+                    {/* <Route path="fepdb" element={<AuthMiddleware/>}> */}
+                    
+                    <Route path="fepdb" element={<FEPDB />}></Route>
+                    <Route path="fepdb/docs" element={<FEPList />}></Route>
+                    <Route path="fepdb/docs/:id" element={<FEPDocs />}></Route>
+                    <Route path="fepdb/docs-update/:id" element={<FEPUpdate />}></Route>
+                    <Route path="fepdb/docs/:fepId/log" element={<FEPLog />}></Route>
+                    <Route path="fepdb/docs/:fepId/log/:id" element={<FEPLogDetail />}></Route>
                     
                     <Route path="regulation" element={<RegInfo />}></Route>
                     <Route path="regulation/:id" element={<RegInfoDetail />}></Route>

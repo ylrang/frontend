@@ -24,7 +24,7 @@ const FEPDB = () => {
                                                 style: { strokeColor: "var(--bs-secondary-color)", strokeWidth: 1 },
                                             },
                                         ]}>
-                                                <Link to={`/fepdocs`} class="btn btn-soft-primary">KINS-KIGAM General FEP List</Link>
+                                                <Link to={`/fepdb/docs`} class="btn btn-soft-primary">KINS-KIGAM General FEP List</Link>
                                         </ArcherElement>
                                         <ArcherElement id="element2">
                                                 <Link to={""} class="btn btn-outline-primary">GeoDART FEP List</Link>

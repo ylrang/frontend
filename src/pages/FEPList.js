@@ -25,7 +25,7 @@ const FEPList = () => {
         return(
                 <div class="accordion-item mt-2 border-0">
                     <div class="accordion-header" id={`general${item.id}`}>
-                        <Link to={`/fepdocs/${item.id}`}>{item.index_num}. {item.name}</Link>
+                        <Link to={`1`}>{item.index_num}. {item.name}</Link>
                         {hasChildren ? (
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${item.id}`} aria-expanded="false" aria-controls={`collapse${item.id}`}></button>
                         ) : (

@@ -3,6 +3,8 @@ import { Routes, Route  } from "react-router-dom";
 import Header from "./components/Header";
 import AppRoutes from "./AppRoutes";
 import { useThemeInit } from "./hooks/useThemeInit";
+import { useDispatch } from "react-redux";
+import { request_refresh } from "./actions/authAction";
 
 function App() {
   // const [loading, setLoading] = useState(true)

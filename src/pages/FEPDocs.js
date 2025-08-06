@@ -70,7 +70,7 @@ const FEPDocs = () => {
                             {!isEditing ? (
                                 <>
                                     <div class="text-end mb-3">
-                                        <Link to={`/fepdocs/${selectedId}/log`} class="btn btn-sm btn-primary me-1">최근 수정 기록</Link>
+                                        <Link to={`/fepdb/docs/${selectedId}/log`} class="btn btn-sm btn-primary me-1">최근 수정 기록</Link>
                                         <button type="button" class="btn btn-sm btn-soft-primary" onClick={() => setIsEditing(!isEditing)}>수정하기</button>
                                     </div>
                                     <FEPDocsView content={content}/>

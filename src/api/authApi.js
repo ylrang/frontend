@@ -41,18 +41,19 @@ axiosPrivateInstance.interceptors.response.use(
         // 토큰 갱신
         if ((error?.response?.status === 403 || error?.response?.status === 401) && !prevRequest?.sent) {
             prevRequest.sent = true; //무한 재요청 방지
-            try {
-                await store.dispatch(request_refresh());
-                const { accessToken, csrfToken } = store.getState().auth;
-                prevRequest.headers['Authorization'] = `Bearer ${accessToken}`;
-                prevRequest.headers['X-CSRFToken'] = csrfToken
-                
-                return axiosPrivateInstance(prevRequest)
-            } catch (err) {
-                store.dispatch(logout());
-                return Promise.reject(err);
-            }
+            
+            await store.dispatch(request_refresh());
+            const { accessToken, csrfToken } = store.getState().auth;
+            prevRequest.headers['Authorization'] = `Bearer ${accessToken}`;
+            prevRequest.headers['X-CSRFToken'] = csrfToken
+            
+            return axiosPrivateInstance(prevRequest)
+            // } catch (err) {
+            //     store.dispatch(logout());
+            //     return Promise.reject(err);
+            // }
         }
+        store.dispatch(logout());
         return Promise.reject(error);
     }
 )

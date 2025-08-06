@@ -51,10 +51,12 @@ export const request_refresh = () => async dispatch => {
             dispatch(load_user());
         } else {
             dispatch({type: REFRESH_FAIL});
+            dispatch(logout());
         }
     }
     catch(err) {
         dispatch({type: REFRESH_FAIL});
+        dispatch(logout());
     }
 };
 
